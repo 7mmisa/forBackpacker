@@ -1,1 +1,42 @@
-hello haml!
+.header
+  .header__left
+    forBackpackers
+  .header__center
+    explore
+  .header__right
+    = link_to "https://www.facebook.com/", class: "contents__right__btn" do
+      = fa_icon 'facebook', class: "contents__right__btn--icon"
+      %span<>
+    = link_to "https://twitter.com/", class: "contents__btn" do
+      = fa_icon 'twitter', class: "contents__right__btn--icon"
+      %span<>
+    = link_to "https://www.instagram.com/", class: "contents__btn" do
+      = fa_icon 'instagram', class: "contents__right__btn--icon"
+      %span<>
+
+.contents
+  .contents__main
+    %section.contents__main__top
+      .contents__main__top__pic
+        contents topic
+      %h1.contents__main__top__title
+        I wanna go to Iceland
+    %section.contents__main__pickupfeeds
+      %h1.contents__pickupfeeds__title
+        FEED
+      .contents__main__pickupfeeds__pic
+        feedpic
+      .contents__main__pickupfeeds__pic
+        feedpic
+      .contents__main__pickupfeeds__pic
+        feedpic
+    %section.contents__main__middle
+      %h1.contents__main__middle__title
+      .contents__main__middle__pic
+        contents__middle
+    %section.contents__main__newfeeds
+      %h1.contents__main__newfeeds__title
+        .contents__main__newfeeds__leftbox
+          newfeed
+        .contents__main__newfeeds__rightbox
+          list

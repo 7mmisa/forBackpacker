@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+};
+
+.contents{
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__main{
+    width: 1240px;
+    background-color: white;
+    &__top{
+      height: 600px;
+      background-color: blanchedalmond;
+    };
+    &__pickupfeeds{
+      height: 600px;
+      background-color: aliceblue;
+    };
+    &__middle{
+      height: 600px;
+      background-color: beige;
+    };
+    &__newfeeds{
+      height: 600px;
+      background-color: blanchedalmond;
+    };
+  };
+};
