@@ -9,29 +9,42 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  position: fixed;
+  z-index: 2;
 
   &__left{
     height: 70px;
-    width: 340px;
-    background-color: lightgrey;
+    width: 366px;
     font-size: 42px;
+    font-weight: bolder;
+    padding-right: 63px;
   };
 
   &__center{
-    height: 60px;
+    height: 42px;
     width: 200px;
-    background-color: #FFF;
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
-    line-height: 55px;
+    line-height: 40px;
+
+    &__btn{
+      text-decoration: none;
+      color: black;
+      display: block;
+    };
   };
 
   &__right{
     height: 40px;
     width: 250px;
-    background-color: lightgoldenrodyellow;
     font-size: 33px;
-    text-align-last: right
+    padding-left: 80px;
+    line-height: 2.5rem;
+    letter-spacing: 17.5px;
+    display: flex;
+    &__btn{
+      color: black; 
+    };
   };
 };
 
