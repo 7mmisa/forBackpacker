@@ -64,4 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'pry-rails'
 gem 'sprockets', '3.7.2'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'active_hash'
