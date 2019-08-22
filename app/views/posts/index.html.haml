@@ -17,74 +17,85 @@
 
 .contents
   .contents__main
-    %section.contents__main__top
-      .contents__main__top__pic
-        main pic
-      %h1.contents__main__top__title
+    %section.top
+      %ul.slick
+        %li
+          = image_tag '鹿ちゃん.jpg', class: 'header__image--pic'
+        %li
+          = image_tag 'showcase_hashimotointerview.jpg', class: 'header__image--pic'
+        %li
+          = image_tag 'コーヒー.jpg', class: 'header__image--pic'
+        %li
+          = image_tag 'すき焼き.jpg', class: 'header__image--pic'
+      %h1.top__title
         Explore Iceland
-    %section.contents__main__pickupfeeds
-      %h1.contents__main__pickupfeeds__title
-        .contents__main__pickupfeeds__title__left
+    %section.pickupfeeds
+      %h1.pickupfeeds__title
+        .pickupfeeds__title__left
           FEED
-        .contents__main__pickupfeeds__title__right
+        .pickupfeeds__title__right
           Pickup Top
 
-      .contents__main__pickupfeeds__box
-        .contents__main__pickupfeeds__box__picture
-          .contents__main__pickupfeeds__box__picture__pic
+      .pickupfeeds__box
+        .pickupfeeds__box__picture
+          .pickupfeeds__box__picture__pic
             feedpic
-          .contents__main__pickupfeeds__box__picture__title
+          .pickupfeeds__box__picture__title
             nature
-          .contents__main__pickupfeeds__box__picture__sub
+          .pickupfeeds__box__picture__sub
             How beautiful icecaves are!
-        .contents__main__pickupfeeds__box__picture
-          .contents__main__pickupfeeds__box__picture__pic
+        .pickupfeeds__box__picture
+          .pickupfeeds__box__picture__pic
             feedpic
-          .contents__main__pickupfeeds__box__picture__title
+          .pickupfeeds__box__picture__title
             nature
-          .contents__main__pickupfeeds__box__picture__sub
+          .pickupfeeds__box__picture__sub
             How beautiful icecaves are!
-        .contents__main__pickupfeeds__box__picture
-          .contents__main__pickupfeeds__box__picture__pic
+        .pickupfeeds__box__picture
+          .pickupfeeds__box__picture__pic
             feedpic
-          .contents__main__pickupfeeds__box__picture__title
+          .pickupfeeds__box__picture__title
             nature
-          .contents__main__pickupfeeds__box__picture__sub
+          .pickupfeeds__box__picture__sub
             How beautiful icecaves are!
 
-    %section.contents__main__middle
-      .contents__main__middle__box
-        .contents__main__middle__box__pic
-          %h1.contents__main__middle__box__pic__title
+  .contents__sub
+    %section.middle
+      .middle__box
+        .middle__box__pic
+          %h1.middle__box__pic__title
             user_name
-    %section.contents__main__newfeeds
-      .contents__main__newfeeds__box
-        .contents__main__newfeeds__box__leftbox
-          %h1.contents__main__newfeeds__box__leftbox__title
+    %section.newfeeds
+      .newfeeds__box
+        
+        .newfeeds__box__leftbox
+          %h1.wrap-title
             newfeed
-          .contents__main__newfeeds__box__leftbox__left
-            .contents__main__newfeeds__box__leftbox__left__pic
-              pic
-            .contents__main__newfeeds__box__leftbox__left__text
-              .contents__main__newfeeds__box__leftbox__left__text__title
-                Iceland 8days
-              .contents__main__newfeeds__box__leftbox__left__text__comment
-                rental car / bus tour
-              .contents__main__newfeeds__box__leftbox__left__text__author
-                .contents__main__newfeeds__box__leftbox__left__text__author__username
-                  misaki awano /
-                .contents__main__newfeeds__box__leftbox__left__text__author__date
-                  2019.7.16
-        .contents__main__newfeeds__box__right
-          .contents__main__newfeeds__box__right__country
-            Country
-            = link_to "https://www.facebook.com/", class: "header__center__btn" do
-              ・Asia
-            = link_to "https://www.facebook.com/", class: "header__center__btn" do
-              ・Africa
-            = link_to "https://www.facebook.com/", class: "header__center__btn" do
-              ・Europe
-            = link_to "https://www.facebook.com/", class: "header__center__btn" do
-              ・North America
-            = link_to "https://www.facebook.com/", class: "header__center__btn" do
-              ・Oceania
+          - @posts.each do |post|
+            .top-list
+              .top-list__pic
+                pic
+              .top-list__text
+                .top-list__text__title
+                  Iceland 8days
+                .top-list__text__comment
+                  -# rental car / bus tour
+                  = post.text
+                .top-list__text__author
+                  .top-list__text__author__username
+                    misaki awano /
+                  .top-list__text__author__date
+                    2019.7.16
+        .newfeeds__box__right
+          -# .newfeeds__box__right__country
+          Country
+          = link_to "https://www.facebook.com/", class: "header__center__btn" do
+            ・Asia
+          = link_to "https://www.facebook.com/", class: "header__center__btn" do
+            ・Africa
+          = link_to "https://www.facebook.com/", class: "header__center__btn" do
+            ・Europe
+          = link_to "https://www.facebook.com/", class: "header__center__btn" do
+            ・North America
+          = link_to "https://www.facebook.com/", class: "header__center__btn" do
+            ・Oceania
