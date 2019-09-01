@@ -1,0 +1,44 @@
+= form_with(model: @posts, local: true, multipart: true) do |f|
+  .log-body
+    .log-body__container
+      .log-body__container__header
+      .main-container
+        .post-box
+          %h1.post-box__top
+            投稿フォーム
+          %h2.post-box__title
+            = f.label :"タイトル"
+            = f.text_field :title, placeholder: "タイトル", class:""
+          %h2.post-box__text
+            = f.label :"text"
+            = f.text_field :text, placeholder: "本文", class:""
+          %h2.post-box__country
+            = f.label :"国"
+            = f.collection_select :country, Country.all, :id, :name, {prompt: "--"}, {class:""}
+          .post-box__upload-box
+            %h2.post-box__upload-box__head
+              = f.label :"投稿画像"
+            %br
+              最大3枚まで投稿できます
+            %br
+              = f.fields_for :images do |image|
+                = image.file_field :image, name: "post[images_attributes][0][image]", multipart: true, id: "myImage", type: "file"
+                .uploads
+                  .post-box__upload__images-box
+                    %img#post-box__upload__image
+                  .post-box__upload__postform
+                    クリックしてファイルをアップロード
+                = image.file_field :image, name: "post[images_attributes][1][image]", multipart: true, id: "myImage2", type: "file"
+                .uploads
+                  .post-box__upload__images-box
+                    %img#post-box__upload__image2
+                  .post-box__upload__postform
+                    クリックしてファイルをアップロード
+                = image.file_field :image, name: "post[images_attributes][2][image]", multipart: true, id: "myImage3", type: "file"
+                .uploads
+                  .post-box__upload__images-box
+                    %img#post-box__upload__image3
+                  .post-box__upload__postform
+                    クリックしてファイルをアップロード
+              = f.submit "投稿", class: 'text__submit-button'
+    .log-body__container__footer
