@@ -12,6 +12,9 @@
           %h2.post-box__text
             = f.label :"text"
             = f.text_field :text, placeholder: "本文", class:""
+          %h2.post-box__country
+            = f.label :"国"
+            = f.collection_select :country, Country.all, :id, :name, {prompt: "--"}, {class:""}
           .post-box__upload-box
             %h2.post-box__upload-box__head
               = f.label :"投稿画像"
