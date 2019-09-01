@@ -209,3 +209,9 @@
     };
   };
 };
+
+@media all and (max-width:480px) {
+  .newfeeds__box__right {
+    display: none;
+  };
+};

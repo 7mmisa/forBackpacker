@@ -1,0 +1,15 @@
+.top-list
+  .top-list__pic
+    - @posts.images.each do |i|
+      = image_tag "#{i.image}", width: 200, height: 200
+  .top-list__text
+    .top-list__text__title
+      = @posts.title
+    .top-list__text__comment
+      -# rental car / bus tour
+      = @posts.text
+    .top-list__text__author
+      .top-list__text__author__username
+        misaki awano /
+      .top-list__text__author__date
+        2019.7.16
