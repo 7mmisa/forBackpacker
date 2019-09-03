@@ -1,19 +1,40 @@
-.header
-  .header__left
-    forBackpackers
-  .header__center
-    = link_to "https://www.facebook.com/", class: "header__center__btn" do
-      explore
-  .header__right
-    = link_to "https://www.facebook.com/", class: "header__right__btn" do
-      = fa_icon 'facebook', class: "header__right__btn--icon"
-      %span<>
-    = link_to "https://twitter.com/", class: "header__right__btn" do
-      = fa_icon 'twitter', class: "header__right__btn--icon"
-      %span<>
-    = link_to "https://www.instagram.com/", class: "header__right__btn" do
-      = fa_icon 'instagram', class: "header__right__btn--icon"
-      %span<>
+- if user_signed_in?
+  .header
+    .header__left
+      forBackpackers
+    .header__center2
+      = link_to "explore", "", class: "header__center2__btn"
+      = link_to "explore", "", class: "header__center2__btn"
+      = link_to "explore", destroy_user_session_path, method: :delete, class: "header__center2__btn"
+    .header__right
+      = link_to "https://www.facebook.com/", class: "header__right__btn" do
+        = fa_icon 'facebook', class: "header__right__btn--icon"
+        %span<>
+      = link_to "https://twitter.com/", class: "header__right__btn" do
+        = fa_icon 'twitter', class: "header__right__btn--icon"
+        %span<>
+      = link_to "https://www.instagram.com/", class: "header__right__btn" do
+        = fa_icon 'instagram', class: "header__right__btn--icon"
+        %span<>
+
+  -# ユーザーがログインしている場合はこちらを表示
+- else
+  .header
+    .header__left
+      forBackpackers
+    .header__center
+      = link_to "https://www.facebook.com/", class: "header__center__btn" do
+        explore
+    .header__right
+      = link_to "https://www.facebook.com/", class: "header__right__btn" do
+        = fa_icon 'facebook', class: "header__right__btn--icon"
+        %span<>
+      = link_to "https://twitter.com/", class: "header__right__btn" do
+        = fa_icon 'twitter', class: "header__right__btn--icon"
+        %span<>
+      = link_to "https://www.instagram.com/", class: "header__right__btn" do
+        = fa_icon 'instagram', class: "header__right__btn--icon"
+        %span<>
 
 .contents
   .contents__main
