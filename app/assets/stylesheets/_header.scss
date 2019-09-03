@@ -31,6 +31,22 @@
     left: 11rem;
   };
 
+  &__center2{
+    height: 42px;
+    width: 200px;
+    font-size: 23px;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    top: 25px;
+    display: flex;
+    &__btn{
+      margin-right: 10px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
   &__center{
     height: 42px;
     width: 100%;
