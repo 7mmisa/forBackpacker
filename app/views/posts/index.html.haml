@@ -88,23 +88,24 @@
             user_name
     %section.newfeeds
       .newfeeds__box
-        
         .newfeeds__box__leftbox
           %h1.wrap-title
             newfeed
           - @posts.each do |post|
-            .top-list
+            = link_to "/posts/#{post.id}", class: "top-list" do
               .top-list__pic
-                pic
+                = image_tag "#{post.images.first.image.url}", width: 250, height: 280
               .top-list__text
                 .top-list__text__title
-                  Iceland 8days
+                  = post.title
                 .top-list__text__comment
                   -# rental car / bus tour
                   = post.text
                 .top-list__text__author
                   .top-list__text__author__username
-                    misaki awano /
+                    -# misaki awano /
+                    = post.country.name
+                    = post.country.continent.name
                   .top-list__text__author__date
                     2019.7.16
         .newfeeds__box__right
