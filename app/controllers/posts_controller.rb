@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
   
   def create
-    
     Post.create(post_params)
   end
 
@@ -19,6 +18,6 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :text, images_attributes: [:id, :image]).merge(user_id: 4, country_id: 1)
+      params.require(:post).permit(:title, :text, :country_id, images_attributes: [:id, :image]).merge(user_id: 1)
     end
 end

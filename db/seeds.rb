@@ -7,33 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Continent.create!(
+Country.create!(
   [
-    {name: 'アジア'
-    },
-    {
-      name: '東南アジア'
-    },
-    {
-      name: 'ヨーロッパ'
-    },
-    {
-      name: '北欧'
-    },
-    {
-      name: '北米'
-    },
-    {
-      name: '南米'
-    },
-    {
-      name: 'オセアニア'
-    },
-    {
-      name: '中東'
-    },
-    {
-      name: 'アフリカ'
-    }
+    {name: '韓国', continent_id: 1},
+    {name: '中国', continent_id: 1},
+    {name: '台湾', continent_id: 1},
+    {name: 'ベトナム', continent_id: 2},
+    {name: 'シンガポール', continent_id: 2},
+    {name: 'タイ', continent_id: 2},
+    {name: 'イギリス', continent_id: 3},
+    {name: 'フランス', continent_id: 3},
+    {name: 'ドイツ', continent_id: 3},
+    {name: 'オーストリア', continent_id: 3},
+    {name: 'ハンガリー', continent_id: 3},
+    {name: 'チェコ', continent_id: 3},
+    {name: 'スペイン', continent_id: 3},
+    {name: 'ポルトガル', continent_id: 3},
+    {name: 'アイスランド', continent_id: 4},
+    {name: 'カナダ', continent_id: 5},
+    {name: 'メキシコ', continent_id: 6},
+    {name: 'オーストラリア', continent_id: 7},
+    {name: 'エジプト', continent_id: 8},
+    {name: 'コートジボワール', continent_id: 9}
   ]
 )
