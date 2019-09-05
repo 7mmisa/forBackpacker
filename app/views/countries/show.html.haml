@@ -1,0 +1,25 @@
+.contents-countryfeeds
+  .contents-countryfeeds__sub
+    %h1.country-name-title
+      韓国
+    %section.newfeeds-each-country 
+      .newfeeds-each-country__box__leftbox
+        %h1.wrap-title-country
+          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;新着情報
+        - @posts.each do |post|
+          = link_to "/posts/#{post.id}", class: "top-list-country" do
+            .top-list-country__pic
+              = image_tag "#{post.images.first.image.url}", width: 250, height: 280
+            .top-list-country__text
+              .top-list__text__title
+                = post.title
+              .top-list-country__text__comment
+                -# rental car / bus tour
+                = post.text
+              .top-list-country__text__author
+                .top-list-country__text__author__username
+                  -# misaki awano /
+                  = post.country.name
+                  = post.country.continent.name
+                .top-list-country__text__author__date
+                  2019.7.16

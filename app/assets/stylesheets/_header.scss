@@ -1,8 +1,5 @@
-* {
-  box-sizing: border-box;
-}
-
 .header{
+  box-sizing: border-box;
   height: 85px;
   width: 100%;
   background-color: $header_green;
@@ -12,7 +9,6 @@
   position: fixed;
   z-index: 2;
   font-family: 'Montserrat',"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
-
   &__image--pic{
     height: 400px;
     width: 100%;
@@ -44,8 +40,8 @@
       margin-right: 10px;
       text-decoration: none;
       color: black;
-    }
-  }
+    };
+  };
 
   &__center{
     height: 42px;

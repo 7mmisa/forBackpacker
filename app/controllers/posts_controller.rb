@@ -14,10 +14,12 @@ class PostsController < ApplicationController
 
   def show
     @posts = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @posts.comments.includes(:user)
   end
 
   private
     def post_params
-      params.require(:post).permit(:title, :text, :country_id, images_attributes: [:id, :image]).merge(user_id: 1)
+      params.require(:post).permit(:title, :text, :country_id, images_attributes: [:id, :image]).merge(user_id: current_user.id)
     end
 end
