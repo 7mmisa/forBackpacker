@@ -5,7 +5,7 @@
     %section.newfeeds-each-country 
       .newfeeds-each-country__box__leftbox
         %h1.wrap-title-country
-          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;新着情報
+          新着情報
         - @posts.each do |post|
           = link_to "/posts/#{post.id}", class: "top-list-country" do
             .top-list-country__pic
