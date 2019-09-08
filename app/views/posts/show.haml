@@ -1,23 +1,24 @@
-.new-postbox
-  = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
-    .top-list
-      .top-list__pic
-        - @posts.images.each do |i|
-          = image_tag "#{i.image}", width: 200, height: 200
-      .top-list__text
-        .top-list__text__title
-          = @posts.title
-        .top-list__text__comment
-          = @posts.text
-        .top-list__text__author
-          .top-list__text__author__username
-            misaki awano /
-          .top-list__text__author__date
-            2019.7.16
-    = f.label :"text"
-    = f.text_field :text, placeholder: "本文", class:""
-    = f.submit "投稿", class: ""
+#wapper-new-postbox
+  .new-postbox
+    = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
+      .top-list
+        .top-list__pic
+          - @posts.images.each do |i|
+            = image_tag "#{i.image}", width: 200, height: 200
+        .top-list__text
+          .top-list__text__title
+            = @posts.title
+          .top-list__text__comment
+            = @posts.text
+          .top-list__text__author
+            .top-list__text__author__username
+              misaki awano /
+            .top-list__text__author__date
+              2019.7.16
+      = f.label :"text"
+      = f.text_field :text, placeholder: "本文", class:""
+      = f.submit "投稿", class: ""
 
-    - @comments.each do |comment|
-      = comment.text
-      = link_to comment.user.name, "/users/#{comment.user_id}"
+      - @comments.each do |comment|
+        = comment.text
+        = link_to comment.user.name, "/users/#{comment.user_id}"
