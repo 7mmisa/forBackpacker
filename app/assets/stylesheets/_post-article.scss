@@ -14,7 +14,7 @@
     &__header{
       margin: auto;
       width: 700px;
-      height: 75px;
+      height: 85px;
       text-align: center;
     };
     .main-container{
@@ -24,11 +24,24 @@
         margin: 0 auto;
         padding: 0;
         background-color: #fff;
+        &__title{
+          padding: 40px 40px 0px;
+        };
+        &__text{
+          padding: 40px 40px 0px;
+          &__placeholder{
+            height: 50px;
+            width: 615px;
+          };
+        };
+        &__country{
+          padding: 40px 40px 0px;
+        };
         &__top{
-          height: 50px;
+          height: 90px;
           font-size: 24px;
           text-align: center;
-          padding: 14px 24px;
+          padding:34px 24px;
           font-weight: bold;
           box-sizing: border-box;
           border-bottom: 1px solid lightgrey;
@@ -43,11 +56,16 @@
           };
           .uploads{
             .post-box__upload__images-box{
-              display: flex;
+              // display: flex;
               #post-box__upload__image, #post-box__upload__image2, #post-box__upload__image3{
                 width: 200px;
                 height: 200px;
-                border: 1px solid lightgrey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin: 0 auto;
+                // border: 1px solid lightgrey;
               };
             };
             .post-box__upload__postform{
@@ -61,4 +79,19 @@
   &__container__footer{
 
   };
+};
+
+.post-images-box{
+  display: flex;
+};
+
+.hidden {
+  display: none;
+}
+.post-images-form{
+  height: 30px;
+  width: 30px;
+};
+.file-field-text{
+  color: #c8c8c8;
 };
