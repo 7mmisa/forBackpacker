@@ -21,24 +21,31 @@
             %br
               最大3枚まで投稿できます
             %br
-              = f.fields_for :images do |image|
-                = image.file_field :image, name: "post[images_attributes][0][image]", multipart: true, id: "myImage", type: "file"
-                .uploads
-                  .post-box__upload__images-box
-                    %img#post-box__upload__image
-                  .post-box__upload__postform
-                    クリックしてファイルをアップロード
-                = image.file_field :image, name: "post[images_attributes][1][image]", multipart: true, id: "myImage2", type: "file"
-                .uploads
-                  .post-box__upload__images-box
-                    %img#post-box__upload__image2
-                  .post-box__upload__postform
-                    クリックしてファイルをアップロード
-                = image.file_field :image, name: "post[images_attributes][2][image]", multipart: true, id: "myImage3", type: "file"
-                .uploads
-                  .post-box__upload__images-box
-                    %img#post-box__upload__image3
-                  .post-box__upload__postform
-                    クリックしてファイルをアップロード
-              = f.submit "投稿", class: 'text__submit-button'
+              .post-images-box
+                = f.fields_for :images do |image|
+                  %label.image
+                    = image.file_field :image, name: "post[images_attributes][0][image]", multipart: true, id: "myImage", type: "file", class: "hidden"
+                    .file-field-text
+                      クリックしてイメージをアップロード
+                    .uploads
+                      .post-box__upload__images-box
+                        %img#post-box__upload__image
+                      .post-box__upload__postform
+                        
+                  %label.image
+                    = image.file_field :image, name: "post[images_attributes][1][image]", multipart: true, id: "myImage2", type: "file", class: "hidden"
+                    .uploads
+                      .post-box__upload__images-box
+                        %img#post-box__upload__image2
+                      .post-box__upload__postform
+                        クリックしてファイルをアップロード
+                  %label.image
+                    = image.file_field :image, name: "post[images_attributes][2][image]", multipart: true, id: "myImage3", type: "file", class: "hidden"
+                    .uploads
+                      .post-box__upload__images-box
+                        %img#post-box__upload__image3
+                      .post-box__upload__postform
+                        クリックしてファイルをアップロード
+              .post-images-form
+                = f.submit "投稿", class: 'text__submit-button'
     .log-body__container__footer
