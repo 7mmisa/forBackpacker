@@ -1,8 +1,8 @@
 #wapper-new-postbox
-  .new-postbox
+  .new-postbox-detail
     = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
-      .top-list
-        .top-list__pic
+      .detail-box
+        .detail-box__pic
           - @posts.images.each do |i|
             = image_tag "#{i.image}", width: 200, height: 200
         .top-list__text
