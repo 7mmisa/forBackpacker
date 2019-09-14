@@ -7,14 +7,20 @@
           %h1.post-box__top
             投稿フォーム
           %h2.post-box__title
-            = f.label :"タイトル"
-            = f.text_field :title, placeholder: "タイトル", class:""
+            %div.post-box__title__box
+              = f.label :"題名", class: "post-box__title__label"
+              %div.post-box__title__name 必須
+            = f.text_area :title, placeholder: "タイトル", class:"post-box__title__input"
           %h2.post-box__text
-            = f.label :"text"
-            = f.text_field :text, placeholder: "本文", class:""
+            %div.post-box__text__box
+              = f.label :"本文", class: "post-box__text__label"
+              %div.post-box__title__name 必須
+            = f.text_area :text, placeholder: "旅行の詳細を記入してください", class:"post-box__text__input"
           %h2.post-box__country
-            = f.label :"国"
-            = f.collection_select :country_id, Country.all, :id, :name, {prompt: "--"}, {class:""}
+            %div.post-box__country__box
+              = f.label :"国", class: "post-box__country__label"
+              %div.post-box__title__name 必須
+            = f.collection_select :country_id, Country.all, :id, :name, {prompt: "--"}, {class:"post-box__country__input"}
           .post-box__upload-box
             %h2.post-box__upload-box__head
               = f.label :"投稿画像"
@@ -26,26 +32,30 @@
                   %label.image
                     = image.file_field :image, name: "post[images_attributes][0][image]", multipart: true, id: "myImage", type: "file", class: "hidden"
                     .file-field-text
-                      クリックしてイメージをアップロード
+                      クリックしてイメージを
+                      %br
+                      アップロード
                     .uploads
                       .post-box__upload__images-box
                         %img#post-box__upload__image
-                      .post-box__upload__postform
-                        
                   %label.image
                     = image.file_field :image, name: "post[images_attributes][1][image]", multipart: true, id: "myImage2", type: "file", class: "hidden"
+                    .file-field-text
+                      クリックしてイメージを
+                      %br
+                      アップロード
                     .uploads
                       .post-box__upload__images-box
                         %img#post-box__upload__image2
-                      .post-box__upload__postform
-                        クリックしてファイルをアップロード
                   %label.image
                     = image.file_field :image, name: "post[images_attributes][2][image]", multipart: true, id: "myImage3", type: "file", class: "hidden"
+                    .file-field-text
+                      クリックしてイメージを
+                      %br
+                      アップロード
                     .uploads
                       .post-box__upload__images-box
                         %img#post-box__upload__image3
-                      .post-box__upload__postform
-                        クリックしてファイルをアップロード
               .post-images-form
                 = f.submit "投稿", class: 'text__submit-button'
     .log-body__container__footer

@@ -5,7 +5,6 @@
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   font-size: 14px;
   color: #333;
-  line-height: 1;
   box-sizing: border-box;
   &__container{
     padding: 0 0 300px;
@@ -26,16 +25,72 @@
         background-color: #fff;
         &__title{
           padding: 40px 40px 0px;
+          &__box{
+            display: flex;
+          };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__name{
+            border: 1px solid orange;
+            border-radius: 10%;
+            color: whitesmoke;
+            padding: 1px 3px 0px 3px;
+            margin-left: 8px;
+            background-color: orange;
+            font-size: 12px;
+          };
+          &__input{
+            margin-top: 10px;
+            border-right:none;
+            border-left:none;
+            border-top:none;
+            width: 100%;
+            outline: 0;
+            box-shadow: none;
+          };
         };
         &__text{
           padding: 40px 40px 0px;
-          &__placeholder{
-            height: 50px;
-            width: 615px;
+          &__box{
+            display: flex;
           };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__input{
+            border-right:none;
+            border-left:none;
+            border-top:none;
+            width: 100%;
+            outline: 0;
+            box-shadow: none;
+            margin-top: 10px;
+          };
+          // &__placeholder{
+          //   height: 50px;
+          //   width: 615px;
+          // };
         };
         &__country{
           padding: 40px 40px 0px;
+          &__box{
+            display: flex;
+          };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__input{
+            margin-top: 10px;
+            outline: 0;
+            box-shadow: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          };
         };
         &__top{
           height: 90px;
@@ -55,8 +110,9 @@
             font-size: 16px;
           };
           .uploads{
+            position: relative;
             .post-box__upload__images-box{
-              // display: flex;
+              padding-right: 7px;
               #post-box__upload__image, #post-box__upload__image2, #post-box__upload__image3{
                 width: 200px;
                 height: 200px;
@@ -65,11 +121,9 @@
                 align-items: center;
                 text-align: center;
                 margin: 0 auto;
+                margin-bottom: 70px;
                 // border: 1px solid lightgrey;
               };
-            };
-            .post-box__upload__postform{
-              height: 70px;
             };
           };
         };
@@ -87,11 +141,21 @@
 
 .hidden {
   display: none;
-}
+};
+
 .post-images-form{
   height: 30px;
   width: 30px;
 };
+
 .file-field-text{
   color: #c8c8c8;
+  position: absolute;
+  text-align: center;
+  top: 82px;
+  left: 24px;
+};
+
+.image{
+  position: relative;
 };
