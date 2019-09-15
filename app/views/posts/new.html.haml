@@ -10,12 +10,12 @@
             %div.post-box__title__box
               = f.label :"題名", class: "post-box__title__label"
               %div.post-box__title__name 必須
-            = f.text_area :title, placeholder: "タイトル", class:"post-box__title__input"
+            = f.text_area :title, placeholder: "例.   アイスランド（７日間）", class:"post-box__title__input"
           %h2.post-box__text
             %div.post-box__text__box
               = f.label :"本文", class: "post-box__text__label"
               %div.post-box__title__name 必須
-            = f.text_area :text, placeholder: "旅行の詳細を記入してください", class:"post-box__text__input"
+            = f.text_area :text, placeholder: "旅行の詳細を記入してください", class:"post-box__text__input", rows: "7", cols: "30"
           %h2.post-box__country
             %div.post-box__country__box
               = f.label :"国", class: "post-box__country__label"
@@ -57,5 +57,5 @@
                       .post-box__upload__images-box
                         %img#post-box__upload__image3
               .post-images-form
-                = f.submit "投稿", class: 'text__submit-button'
+                = f.submit "送信する", id: 'text__submit-button'
     .log-body__container__footer
