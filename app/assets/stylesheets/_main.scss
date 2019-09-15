@@ -135,6 +135,8 @@
             padding: 25px;
             margin-bottom: 25px;
             display: flex;
+            text-decoration: none;
+            color: #333;
             &__pic{
               height: 280px;
               width: 250px;
@@ -143,7 +145,7 @@
             &__text{
               height: 235px;
               width: 475px;
-              background-color: #FFEEFF;
+              background-color: #EEEEEE;
               padding: 15px;
               &__title{
                 height: 85px; 
@@ -181,7 +183,7 @@
           height: 645px;
           width:calc( 100% - 725px - 25px );
           margin: 50px 0px 25px 25px;
-          background-color: #D9E5FF;
+          background-color: #EEEEEE;
           padding: 25px;
           &__country{
             height: 100%;
