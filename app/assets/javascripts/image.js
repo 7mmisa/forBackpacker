@@ -13,7 +13,6 @@ $(function(){
   });
 
   $(document).on("change","#myImage2", function (e) {
-    console.log("a");
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(file){
@@ -26,7 +25,6 @@ $(function(){
   });
 
   $(document).on("change","#myImage3", function (e) {
-    console.log("a");
     var file = event.target.files[0];
     var reader = new FileReader();
     reader.onload = (function(file){
