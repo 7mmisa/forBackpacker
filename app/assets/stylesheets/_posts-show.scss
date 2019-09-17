@@ -1,21 +1,107 @@
 #wapper-new-postbox{
-  height:100vh;
+  height:500vh;
   width:100vw;
   padding-top: 85px;
   background: #f5f5f5;
   .new-postbox-detail{
-    height:100%;
-    width: 70%;
+    background: white;
+    width: 85%;
     max-width: 1150px;
     margin: 0 auto;
-    background: white;
     .detail-box{
-      height: 100%;
-      width: 100%;
-      &__pic{
+      max-width: 100%;
+      height: auto;
+      padding-bottom: 50px;
+      margin: 50px auto 75px;
+      vertical-align: bottom;
+      &__mainvisual{
         padding-top: 40px;
         margin: 0 auto;
         text-align: center;
+      };
+      &__text{
+        width: 67.1%;
+        margin: 50px auto 75px;
+        .detail-box-top{
+          &__title{
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-feature-settings: "palt" 1;
+            letter-spacing: 1px;
+            font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+          };
+          &__author{
+            margin-bottom: 25px;
+            display: flex;
+            position: relative;
+            &__date{
+              position: absolute;
+              top: 10px;
+              left: 60px;
+            };
+            &__image{
+              border-radius: 50%;
+            };
+          };
+          .detail-box-top__line{
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #cccccc;
+          };
+        };
+      };
+      &__comments{
+        margin: 50px auto 75px;
+        width: 67.1%;
+        &__all{
+          margin: 100px auto 30px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid lightgrey;
+          color: #333;
+        };
+        &__input{
+          position: relative;
+          &__placeholder{
+            border: none;
+            border-bottom: 1px solid lightgrey;
+            width: 100%;
+            outline: none;
+          };
+          #detail-box__comments__submit{
+            width: 60px;
+            height: 33px;
+            display: block;
+            position: absolute;
+            font-size: 1em;
+            right: 0;
+            background-color: lightgray;
+            color: #fff;
+            border-style: none;
+            border-radius: 3%;
+          };
+        };
+        &__list{
+          box-sizing: border-box;
+          &__one{
+            display: flex;
+          };
+          .commented-user{
+            display: flex;
+            margin-bottom: 35px;
+            &__image{
+              margin-right: 10px;
+              border-radius: 50%;
+            };
+            &__right{
+              &__name{
+                text-decoration: none;
+                color: #333;
+              };
+            };
+          };
+        };
       };
     };
   };

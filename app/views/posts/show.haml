@@ -2,23 +2,31 @@
   .new-postbox-detail
     = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
       .detail-box
-        .detail-box__pic
+        .detail-box__mainvisual
           - @posts.images.each do |i|
-            = image_tag "#{i.image}", width: 200, height: 200
-        .top-list__text
-          .top-list__text__title
-            = @posts.title
-          .top-list__text__comment
+            = image_tag "#{i.image}", height: 580
+        .detail-box__text
+          .detail-box-top
+            .detail-box-top__title
+              = @posts.title
+            .detail-box-top__author
+              = image_tag asset_path('avator.png'), class: "detail-box-top__author__image", height: '45px', width: '45px'
+              .detail-box-top__author__date
+                = current_user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
+            %hr.detail-box-top__line
+          .detail-box__text__contents
             = @posts.text
-          .top-list__text__author
-            .top-list__text__author__username
-              misaki awano /
-            .top-list__text__author__date
-              2019.7.16
-      = f.label :"text"
-      = f.text_field :text, placeholder: "本文", class:""
-      = f.submit "投稿", class: ""
-
-      - @comments.each do |comment|
-        = comment.text
-        = link_to comment.user.name, "/users/#{comment.user_id}"
+        .detail-box__comments
+          .detail-box__comments__input
+            = f.text_area :text, placeholder: "気になったことを聞いてみよう！", class:"detail-box__comments__input__placeholder"
+            = f.submit "投稿", id: "detail-box__comments__submit"
+          .detail-box__comments__all
+            すべてのコメント
+          .detail-box__comments__list
+            - @comments.each do |comment|
+              .commented-user
+                = image_tag asset_path('avator.png'), class: "commented-user__image", height: '45px', width: '45px'
+                .commented-user__right
+                  = link_to comment.user.name, "/users/#{comment.user_id}", class: "commented-user__right__name"
+                  .commented-user__right__text
+                    = comment.text
