@@ -1,26 +1,60 @@
-%h2 Sign up
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field-box-signup
+-#     .field
+-#       = f.label :nickname
+-#       %br/
+-#       = f.text_field :name, class: "form-control"
+-#     .field
+-#       = f.label :email
+-#       %br/
+-#       = f.email_field :email, autofocus: true, autocomplete: "email"
+-#     .field
+-#       = f.label :password
+-#       - if @minimum_password_length
+-#         %em
+-#           (#{@minimum_password_length} characters minimum)
+-#       %br/
+-#       = f.password_field :password, autocomplete: "new-password"
+-#     .field
+-#       = f.label :password_confirmation
+-#       %br/
+-#       = f.password_field :password_confirmation, autocomplete: "new-password"
+-#     .actions
+-#       = f.submit "Sign up"
+-# = render "users/shared/links"
+
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field-box-signup
-    .field
-      = f.label :nickname
-      %br/
-      = f.text_field :name, class: "form-control"
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "new-password"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "new-password"
-    .actions
-      = f.submit "Sign up"
-= render "users/shared/links"
+  .signup-body
+    .signup-body__box
+      %h2.signup-body__box__title
+        Sign Up
+      .signup-body__box__main
+        .field-box-signup
+          = f.label :nickname
+          %br/
+          = f.text_field :name, class: "form-control-signup"
+        .field-box-signup
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-signup"
+        .field-box-signup
+          = f.label :password
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password", class: "form-control-signup"
+        .field-box-signup
+          = f.label :password_confirmation
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control-signup"
+        .field-box-submit
+          = f.submit "Sign up", id: 'send-signup'
+          %br
+        .field-box-login
+          すでにアカウントをお持ちの方はこちら
+          %br/
+          = render "users/shared/links"

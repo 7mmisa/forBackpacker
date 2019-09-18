@@ -24,12 +24,16 @@
     padding-right: 63px;
     position: absolute;
     top: 20px;
-    left: 11rem;
+    left: 1rem;
+    &__forBackpackers{
+      text-decoration: none;
+      color: black;
+    };
   };
 
   &__center2{
     height: 42px;
-    width: 200px;
+    width: 280px;
     font-size: 23px;
     text-align: center;
     line-height: 40px;
@@ -68,7 +72,7 @@
     letter-spacing: 17.5px;
     display: flex;
     position: absolute;
-    right: -67rem;
+    right: -82rem;
     &__btn{
       color: black; 
     };

@@ -1,18 +1,47 @@
-%h2 Log in
+-# %h2 Log in
+-# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+-#   .field-box-signin
+-#     .field
+-#       = f.label :email
+-#       %br/
+-#       = f.email_field :email, autofocus: true, autocomplete: "email"
+-#     .field
+-#       = f.label :password
+-#       %br/
+-#       = f.password_field :password, autocomplete: "current-password"
+-#     - if devise_mapping.rememberable?
+-#       .field
+-#         = f.check_box :remember_me
+-#         = f.label :remember_me
+-#     .actions
+-#       = f.submit "Log in"
+-# = render "users/shared/links"
+
+
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field-box-signin
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "Log in"
-= render "users/shared/links"
+  .signin-body
+    .signin-body__box
+      %h2.signin-body__box__title
+        Sign In
+      .signin-body__box__main
+        .field-box-signin
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control-signin"
+        .field-box-signin
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class: "form-control-signin"
+        - if devise_mapping.rememberable?
+          .field-box-signin
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .field-box-login
+          = f.submit "Log in", id: 'send-login'
+          %br
+        .field-box-already
+          .field-box-already__top
+            新規会員登録の方はこちら
+            %br/
+          .field-box-already__links
+            = link_to "Sign up", new_registration_path(resource_name), class: "signup-button"
