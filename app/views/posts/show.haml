@@ -12,14 +12,15 @@
             .detail-box-top__author
               = image_tag asset_path('avator.png'), class: "detail-box-top__author__image", height: '45px', width: '45px'
               .detail-box-top__author__date
-                = current_user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
+                = @posts.user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
             %hr.detail-box-top__line
           .detail-box__text__contents
             = @posts.text
         .detail-box__comments
           .detail-box__comments__input
-            = f.text_area :text, placeholder: "気になったことを聞いてみよう！", class:"detail-box__comments__input__placeholder"
-            = f.submit "投稿", id: "detail-box__comments__submit"
+            - if current_user
+              = f.text_area :text, placeholder: "気になったことを聞いてみよう！", class:"detail-box__comments__input__placeholder"
+              = f.submit "投稿", id: "detail-box__comments__submit"
           .detail-box__comments__all
             すべてのコメント
           .detail-box__comments__list
