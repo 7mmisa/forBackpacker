@@ -31,3 +31,22 @@
                   = link_to comment.user.name, "/users/#{comment.user_id}", class: "commented-user__right__name"
                   .commented-user__right__text
                     = comment.text
+        .detail-box__profile
+          .detail-box__profile__main
+            .profile-box
+              = image_tag asset_path('avator.png'), class: "profile-box__image", height: '120px', width: '120px'
+              = link_to "#{@posts.user.name}", "/users/#{@posts.user_id}", class: "profile-box__name"
+            .profile-box-text
+              1993年5月7日生まれ
+              %br
+              幼少期から旅行好きの両親に連れられ国内外多くの都市を訪れました。
+              %br　　　
+              昨今特にお気に入りの国はアイスランド。
+              %br
+              きっかけはアイスランドミュージシャンのsigur rosの音楽に胸を打たれ、
+              %br
+              その他のアーティストの音楽も自然と聴くように..
+              %br
+              彼らのルーツとなった国を知りたいと思い、気づいたら氷河を目指して運転していました。
+          .detail-box__profile__sub
+            .detail-box__profile__sub__sns

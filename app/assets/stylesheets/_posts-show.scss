@@ -10,7 +10,8 @@
     margin: 0 auto;
     .detail-box{
       max-width: 100%;
-      height: auto;
+      // height: auto;
+      height: 450vh;
       padding-bottom: 50px;
       margin: 50px auto 75px;
       vertical-align: bottom;
@@ -100,6 +101,44 @@
                 color: #333;
               };
             };
+          };
+        };
+      };
+      &__profile{
+        margin: 50px auto 75px;
+        width: 67.1%;
+        &__main{
+          .profile-box{
+            display: flex;
+            position: relative;
+            &__image{
+              border-radius: 50%;
+            };
+            &__name{
+              position: absolute;
+              left: 180px;
+              font-size: 23px;
+              top: 38px;
+              color: #333;
+              text-decoration: none;
+            };
+          };
+          .profile-box-text{
+            width: 77.6%;
+            float: right;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0;
+            border-top: 1px solid #D8D8D8;
+            padding-top: 35px;
+            margin-top: 5px;
+          };
+        };
+        .detail-box__profile__sub{
+          &__sns{
+            width: 86.1%;
+            margin: 0 auto 80px;
+            // border-top: 1px solid #D8D8D8;
           };
         };
       };
