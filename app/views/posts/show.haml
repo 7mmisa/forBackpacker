@@ -15,7 +15,7 @@
                 = @posts.user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
             %hr.detail-box-top__line
           .detail-box__text__contents
-            = @posts.text
+            = simple_format(@posts.text)
         .detail-box__comments
           .detail-box__comments__input
             - if current_user
