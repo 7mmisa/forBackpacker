@@ -4,7 +4,7 @@
       = link_to "forBackpackers", root_path, class: "header__left__forBackpackers"
     .header__center2
       = link_to "newpost", new_post_path, class: "header__center2__btn"
-      = link_to "mypage", "", class: "header__center2__btn"
+      = link_to "mypage", "/users/#{current_user.id}", class: "header__center2__btn"
       = link_to "logout", destroy_user_session_path, method: :delete, class: "header__center2__btn"
     .header__right
       = link_to "https://www.facebook.com/", class: "header__right__btn" do
