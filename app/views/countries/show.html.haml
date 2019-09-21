@@ -15,7 +15,7 @@
                 = post.title
               .top-list-country__text__comment
                 -# rental car / bus tour
-                = post.text
+                = post.text.truncate(50, separator: /\s/)
               .top-list-country__text__author
                 .top-list-country__text__author__username
                   -# misaki awano /
