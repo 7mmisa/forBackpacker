@@ -1,0 +1,24 @@
+.contents-mypagefeeds
+  .contents-mypagefeeds__sub
+    %h1.user-name-top
+      = current_user.name
+    %section.newfeeds-each-country 
+      .newfeeds-each-country__box__leftbox
+        %h1.wrap-title-country
+        - @posts.each do |post|
+          = link_to "/posts/#{post.id}", class: "top-list-country" do
+            .top-list-country__pic
+              = image_tag "#{post.images.first.image.url}", width: 250, height: 280
+            .top-list-country__text
+              .top-list-country__text__title
+                = post.title
+              .top-list-country__text__comment
+                -# rental car / bus tour
+                = post.text.truncate(50, separator: /\s/)
+              .top-list-country__text__author
+                .top-list-country__text__author__username
+                  -# misaki awano /
+                  = post.country.name
+                  = post.country.continent.name
+                .top-list-country__text__author__date
+                  = post.created_at.strftime('%Y/%m/%d')
