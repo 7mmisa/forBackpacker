@@ -1,0 +1,70 @@
+= form_with(model: @posts, local: true, multipart: true) do |f|
+  .edit-body
+    .edit-body__container
+      .edit-body__container__header
+      .main-container-edit
+        .post-box-edit
+          %h1.post-box-edit__top
+            編集フォーム
+          %h2.post-box-edit__title
+            %div.post-box-edit__title__box
+              = f.label :"題名", class: "post-box-edit__title__label"
+              %div.post-box-edit__title__name 必須
+            = f.text_area :title, placeholder: "例.   アイスランド（７日間）", class:"post-box-edit__title__input"
+          %h2.post-box-edit__text
+            %div.post-box-edit__text__box
+              = f.label :"本文", class: "post-box-edit__text__label"
+              %div.post-box-edit__title__name 必須
+            = f.text_area :text, placeholder: "旅行の詳細を記入してください", class:"post-box-edit__text__input", rows: "7", cols: "30"
+          %h2.post-box-edit__country
+            %div.post-box-edit__country__box
+              = f.label :"国", class: "post-box-edit__country__label"
+              %div.post-box-edit__title__name 必須
+            = f.collection_select :country_id, Country.all, :id, :name, {prompt: "--"}, {class:"post-box-edit__country__input"}
+          .post-box-edit__upload-box
+            %h2.post-box-edit__upload-box__head
+              = f.label :"投稿画像"
+            %br
+              最大3枚まで投稿できます
+            %br
+              .edit-images-box
+                = f.fields_for :images do |image|
+                  %label.image-edit
+                    = image.file_field :image, name: "post[images_attributes][0][image]", multipart: true, id: "myImage", type: "file", class: "hidden-edit"
+                    .file-field-edit
+                      クリックしてイメージを
+                      %br
+                      アップロード
+                    .uploads-edit
+                      .post-box-edit__upload__images-box
+                        - if @posts.images[0].present?
+                          = image_tag @posts.images[0].image.url, id: "post-box__upload__image", width: "200px", height: "200px"
+                        - else
+                          %img#post-box__upload__image
+                  %label.image-edit
+                    = image.file_field :image, name: "post[images_attributes][1][image]", multipart: true, id: "myImage2", type: "file", class: "hidden-edit"
+                    .file-field-edit
+                      クリックしてイメージを
+                      %br
+                      アップロード
+                    .uploads-edit
+                      .post-box-edit__upload__images-box
+                        - if @posts.images[1].present?
+                          = image_tag @posts.images[1].image.url, id: "post-box__upload__image2", width: "200px", height: "200px"
+                        - else
+                          %img#post-box__upload__image2
+                  %label.image-edit
+                    = image.file_field :image, name: "post[images_attributes][2][image]", multipart: true, id: "myImage3", type: "file", class: "hidden-edit"
+                    .file-field-edit
+                      クリックしてイメージを
+                      %br
+                      アップロード
+                    .uploads-edit
+                      .post-box-edit__upload__images-box
+                        - if @posts.images[2].present?
+                          = image_tag @posts.images[2].image.url, id: "post-box__upload__image3", width: "200px", height: "200px"
+                        - else
+                          %img#post-box__upload__image3
+              .edit-images-form
+                = f.submit "送信する", id: 'edit__submit-button'
+    .edit-body__container__footer

@@ -1,0 +1,181 @@
+.edit-body{
+  position: relative;
+  min-height: 100%;
+  background: #f5f5f5;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  &__container{
+    padding: 0 0 300px;
+    box-sizing: border-box;
+    height: 100%;
+    &__header{
+      margin: auto;
+      width: 700px;
+      height: 85px;
+      text-align: center;
+    };
+    .main-container-edit{
+      .post-box-edit{
+        width: 700px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 0;
+        background-color: #fff;
+        &__title{
+          padding: 40px 40px 0px;
+          &__box{
+            display: flex;
+          };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__name{
+            border: 1px solid orange;
+            border-radius: 10%;
+            color: whitesmoke;
+            padding: 1px 3px 0px 3px;
+            margin-left: 8px;
+            background-color: orange;
+            font-size: 12px;
+          };
+          &__input{
+            margin-top: 10px;
+            border: 1px solid lightgrey;
+            border-right:none;
+            border-left:none;
+            border-top:none;
+            width: 100%;
+            outline: 0;
+            box-shadow: none;
+          };
+        };
+        &__text{
+          padding: 40px 40px 0px;
+          &__box{
+            display: flex;
+          };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__input{
+            border: 1px solid lightgrey;
+            border-right:none;
+            border-left:none;
+            border-top:none;
+            height: 135px;
+            width: 100%;
+            outline: 0;
+            box-shadow: none;
+            margin-top: 10px;
+          };
+          // &__placeholder{
+          //   height: 50px;
+          //   width: 615px;
+          // };
+        };
+        &__country{
+          padding: 40px 40px 0px;
+          &__box{
+            display: flex;
+          };
+          &__label{
+            padding: 2px 3px 2px 3px;
+            font-weight: bold;
+          };
+          &__input{
+            margin-top: 10px;
+            outline: 0;
+            box-shadow: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+          };
+        };
+        &__top{
+          height: 90px;
+          font-size: 24px;
+          text-align: center;
+          padding:34px 24px;
+          font-weight: bold;
+          box-sizing: border-box;
+          border-bottom: 1px solid lightgrey;
+        };
+        &__upload-box{
+          padding: 40px 40px 0 40px;
+          margin: 0;
+          border-bottom: solid 1px lightgrey;
+          .post-box-edit__upload-box__head{
+            font-weight: bold;
+            font-size: 16px;
+          };
+          .uploads-edit{
+            position: relative;
+            .post-box-edit__upload__images-box{
+              padding-right: 7px;
+              #post-box__upload__image, #post-box__upload__image2, #post-box__upload__image3{
+                width: 200px;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 70px;
+                // border: 1px solid lightgrey;
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+  &__container__footer{
+
+  };
+};
+
+.edit-images-box{
+  display: flex;
+  overflow: hidden;
+};
+
+.hidden-edit {
+  display: none;
+};
+
+.edit-images-form{
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+};
+
+.file-field-edit{
+  color: #c8c8c8;
+  position: absolute;
+  text-align: center;
+  top: 82px;
+  left: 24px;
+};
+
+.image-edit{
+  position: relative;
+};
+
+#edit__submit-button{
+  width: 150px;
+  height: 50px;
+  padding: 15px 40px;
+  font-size: 1em;
+  background-color: lightgray;
+  color: #fff;
+  border-style: none;
+  border-radius: 3%;
+};
+
+.hidden-file-input{
+  display: none;
+};
