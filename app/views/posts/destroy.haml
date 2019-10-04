@@ -3,8 +3,8 @@
     .success
       .success__box
         %h3
-          投稿が完了しました。
+          削除が完了しました。
           %br
           %br
-        %a.btn{:href => "/posts"} 投稿一覧へ戻る
+        %a.btn{href: "/users/#{current_user.id}"} 投稿一覧へ戻る
   .contents-row__end

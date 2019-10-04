@@ -1,7 +1,9 @@
 #wapper-new-postbox{
-  height:500vh;
+  min-height:100%;
+  height: auto !important;
   width:100vw;
-  padding-top: 85px;
+  // height:400vh;
+  padding: 125px 0 40px 0;
   background: #f5f5f5;
   .new-postbox-detail{
     background: white;
@@ -10,15 +12,19 @@
     margin: 0 auto;
     .detail-box{
       max-width: 100%;
-      // height: auto;
-      height: 450vh;
-      padding-bottom: 50px;
-      margin: 50px auto 75px;
-      vertical-align: bottom;
+    min-height: 400px;
+    height: auto !important;
+    height: 400px;
+    padding-bottom: 1px;
+    // margin: 50px auto 75px;
+    vertical-align: bottom;
       &__mainvisual{
         padding-top: 40px;
         margin: 0 auto;
         text-align: center;
+        img{
+          max-width: 67.1%
+        };
       };
       &__text{
         width: 67.1%;
@@ -45,12 +51,59 @@
             &__image{
               border-radius: 50%;
             };
+            &__createbox{
+              position: absolute;
+              right: 0;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              height: 100%;
+              width: 12%;
+              &__update{
+                height: 80%;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                background-color: #99CCCC;
+                border-radius: 0.4rem;
+                span{
+                  position: absolute;
+                  right: 4px;
+                  color: white;
+                };
+              };
+              &__delete{
+                height: 80%;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                background-color: #996666;
+                border-radius: 0.4rem;
+                span{
+                  position: absolute;
+                  right: 4px;
+                  color: white;
+                };
+              };
+            };
           };
           .detail-box-top__line{
             height: 1px;
             border: 0;
             border-top: 1px solid #cccccc;
           };
+        };
+      };
+      .detail-box__text__images{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        img{
+          max-width: 50%;
+          width: calc(100vmin - 450px);
+          height:  calc(100vmin - 450px);
         };
       };
       &__comments{
@@ -106,6 +159,9 @@
       };
       &__profile{
         margin: 50px auto 75px;
+        min-height: 345px;
+        height: auto !important;
+        height: 345px;
         width: 67.1%;
         &__main{
           .profile-box{

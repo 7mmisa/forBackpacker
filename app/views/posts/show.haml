@@ -3,8 +3,9 @@
     = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
       .detail-box
         .detail-box__mainvisual
-          - @posts.images.each do |i|
-            = image_tag "#{i.image}", height: 580
+          -# - @posts.images.each do |i|
+          -#   = image_tag "#{i.image}", height: 580
+          = image_tag "#{@posts.images[0].image}", height: 580
         .detail-box__text
           .detail-box-top
             .detail-box-top__title
@@ -13,9 +14,20 @@
               = image_tag asset_path('avator.png'), class: "detail-box-top__author__image", height: '45px', width: '45px'
               .detail-box-top__author__date
                 = @posts.user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
+              - if user_signed_in? && current_user.id == @posts.user_id
+                .detail-box-top__author__createbox
+                  = link_to edit_post_path(@posts.id), method: :get, class: "detail-box-top__author__createbox__update" do
+                    %span
+                      編集
+                  = link_to "/posts/#{@posts.id}", method: :delete, class: "detail-box-top__author__createbox__delete" do
+                    %span
+                      削除
             %hr.detail-box-top__line
           .detail-box__text__contents
             = simple_format(@posts.text)
+          .detail-box__text__images
+            - @posts.images[1..2].each do |i|
+              = image_tag "#{i.image}"
         .detail-box__comments
           .detail-box__comments__input
             - if current_user

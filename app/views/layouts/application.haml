@@ -11,5 +11,6 @@
     %script{ type: "text/javascript", src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"} 
   %body
     -# = render partial: 'layouts/flash'
-    = render "shared/header"
-    = yield
+    .wrapper
+      = render "shared/header"
+      = yield
