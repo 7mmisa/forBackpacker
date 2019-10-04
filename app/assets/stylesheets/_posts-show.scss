@@ -101,9 +101,8 @@
         display: flex;
         justify-content: space-between;
         img{
-          max-width: 50%;
-          width: calc(100vmin - 450px);
-          height:  calc(100vmin - 450px);
+          max-width: 49%;
+          min-height:  calc(100vmin - 450px);
         };
       };
       &__comments{
