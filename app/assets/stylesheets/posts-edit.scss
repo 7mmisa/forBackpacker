@@ -7,7 +7,6 @@
   color: #333;
   box-sizing: border-box;
   &__container{
-    padding: 0 0 300px;
     box-sizing: border-box;
     height: 100%;
     &__header{
@@ -17,6 +16,7 @@
       text-align: center;
     };
     .main-container-edit{
+      padding: 40px 0 40px 0;
       .post-box-edit{
         width: 700px;
         height: 100%;
@@ -99,7 +99,7 @@
           height: 90px;
           font-size: 24px;
           text-align: center;
-          padding:34px 24px;
+          line-height: 90px;
           font-weight: bold;
           box-sizing: border-box;
           border-bottom: 1px solid lightgrey;
