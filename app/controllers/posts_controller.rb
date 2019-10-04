@@ -27,7 +27,6 @@ class PostsController < ApplicationController
 
   def edit
     @posts = Post.find(params[:id])
-    @country = Country.find(params[:id])
   end
 
   def update
