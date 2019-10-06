@@ -11,7 +11,9 @@
         %li
           = image_tag asset_path('Mongol-lake.jpg'), class: 'header__image--pic'
       %h1.top__title
-        Explore Iceland
+        Lets explore the world!
+      %h2.top__title__sub
+        How was your journey? How did you feel?
     %section.pickupfeeds
       %h1.pickupfeeds__title
         .pickupfeeds__title__left
@@ -20,29 +22,33 @@
           Pickup Top
 
       .pickupfeeds__box
-        .pickupfeeds__box__picture
-          .pickupfeeds__box__picture__pic
-            feedpic
-          .pickupfeeds__box__picture__title
-            nature
-          .pickupfeeds__box__picture__sub
-            How beautiful icecaves are!
-        .pickupfeeds__box__picture
-          .pickupfeeds__box__picture__pic
-            feedpic
-          .pickupfeeds__box__picture__title
-            nature
-          .pickupfeeds__box__picture__sub
-            How beautiful icecaves are!
-        .pickupfeeds__box__picture
-          .pickupfeeds__box__picture__pic
-            feedpic
-          .pickupfeeds__box__picture__title
-            nature
-          .pickupfeeds__box__picture__sub
-            How beautiful icecaves are!
+        = link_to "", class: "pickupfeeds__box__top" do
+          .pickupfeeds__box__picture
+            .pickupfeeds__box__picture__pic
+              = image_tag asset_path('Italia-cafe.jpg'), class: 'pickupfeeds__box__picture__pic'
+            .pickupfeeds__box__picture__title
+              life
+            .pickupfeeds__box__picture__sub
+              Relaxed atmosphere is here.
+        = link_to "", class: "pickupfeeds__box__top" do
+          .pickupfeeds__box__picture
+            .pickupfeeds__box__picture__pic
+              = image_tag asset_path('Sunflowers.jpg'), class: 'pickupfeeds__box__picture__pic'
+            .pickupfeeds__box__picture__title
+              nature
+            .pickupfeeds__box__picture__sub
+              Sunflower fields around tuscany!
+        = link_to "", class: "pickupfeeds__box__top" do
+          .pickupfeeds__box__picture
+            .pickupfeeds__box__picture__pic
+              = image_tag asset_path('Italia-nightview.jpg'), class: 'pickupfeeds__box__picture__pic'
+            .pickupfeeds__box__picture__title
+              building
+            .pickupfeeds__box__picture__sub
+              What a beautiful buildings are!
 
   .contents__sub
+    -# -後ほど追加予定
     -# %section.middle
     -#   .middle__box
     -#     .middle__box__pic
