@@ -1,64 +1,59 @@
 #wapper-new-postbox
   .new-postbox-detail
-    = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
-      .detail-box
-        .detail-box__mainvisual
-          -# - @posts.images.each do |i|
-          -#   = image_tag "#{i.image}", height: 580
-          = image_tag "#{@posts.images[0].image}", height: 580
-        .detail-box__text
-          .detail-box-top
-            .detail-box-top__title
-              = @posts.title
-            .detail-box-top__author
-              = image_tag asset_path('avator.png'), class: "detail-box-top__author__image", height: '45px', width: '45px'
-              .detail-box-top__author__date
-                = @posts.user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
-              - if user_signed_in? && current_user.id == @posts.user_id
-                .detail-box-top__author__createbox
-                  = link_to edit_post_path(@posts.id), method: :get, class: "detail-box-top__author__createbox__update" do
-                    %span
-                      編集
-                  = link_to "/posts/#{@posts.id}", method: :delete, class: "detail-box-top__author__createbox__delete" do
-                    %span
-                      削除
-            %hr.detail-box-top__line
-          .detail-box__text__contents
-            = simple_format(@posts.text)
-          .detail-box__text__images
-            - @posts.images[1..2].each do |i|
-              = image_tag "#{i.image}"
-        .detail-box__comments
-          .detail-box__comments__input
+    .detail-box
+      .detail-box__mainvisual
+        = image_tag "#{@posts.images[0].image}", height: 580
+      .detail-box__text
+        .detail-box-top
+          .detail-box-top__title
+            = @posts.title
+          .detail-box-top__author
+            = image_tag asset_path('avator.png'), class: "detail-box-top__author__image", height: '45px', width: '45px'
+            .detail-box-top__author__date
+              = @posts.user.name + " / " + @posts.created_at.strftime("%Y年%m月%d日")
+            - if user_signed_in? && current_user.id == @posts.user_id
+              .detail-box-top__author__createbox
+                = link_to edit_post_path(@posts.id), method: :get, class: "detail-box-top__author__createbox__update" do
+                  %span
+                    編集
+                = link_to "/posts/#{@posts.id}", method: :delete, class: "detail-box-top__author__createbox__delete" do
+                  %span
+                    削除
+          %hr.detail-box-top__line
+        .detail-box__text__contents
+          = simple_format(@posts.text)
+        .detail-box__text__images
+          - @posts.images[1..2].each do |i|
+            = image_tag "#{i.image}"
+      .detail-box__comments
+        .detail-box__comments__input
+          = form_for(@comment, url: "/posts/#{@posts.id}/comments", method: :post) do |f|
             - if current_user
               = f.text_area :text, placeholder: "気になったことを聞いてみよう！", class:"detail-box__comments__input__placeholder"
               = f.submit "投稿", id: "detail-box__comments__submit"
-          .detail-box__comments__all
-            すべてのコメント
-          .detail-box__comments__list
-            - @comments.each do |comment|
-              .commented-user
-                = image_tag asset_path('avator.png'), class: "commented-user__image", height: '45px', width: '45px'
-                .commented-user__right
-                  = link_to comment.user.name, "/users/#{comment.user_id}", class: "commented-user__right__name"
-                  .commented-user__right__text
-                    = comment.text
-        .detail-box__profile
-          .detail-box__profile__main
-            .profile-box
-              = image_tag asset_path('avator.png'), class: "profile-box__image", height: '120px', width: '120px'
-              = link_to "#{@posts.user.name}", "/users/#{@posts.user_id}", class: "profile-box__name"
+        .detail-box__comments__all
+          すべてのコメント
+        .detail-box__comments__list
+          - @comments.each do |comment|
+            .commented-user
+              = image_tag asset_path('avator.png'), class: "commented-user__image", height: '45px', width: '45px'
+              .commented-user__right
+                = link_to comment.user.name, "/users/#{comment.user_id}", class: "commented-user__right__name"
+                .commented-user__right__text
+                  = comment.text
+      .detail-box__profile
+        .detail-box__profile__main
+          .profile-box
+            = image_tag asset_path('avator.png'), class: "profile-box__image", height: '120px', width: '120px'
+            = link_to "#{@posts.user.name}", "/users/#{@posts.user_id}", class: "profile-box__name"
+          - if user_signed_in? && current_user.id == @posts.user_id
             .profile-box-text
-              1993年5月7日生まれ
-              %br
-              幼少期から旅行好きの両親に連れられ国内外多くの都市を訪れました。
-              %br　　　
-              昨今特にお気に入りの国はアイスランド。
-              %br
-              きっかけはアイスランドミュージシャンのsigur rosの音楽に胸を打たれ、
-              %br
-              その他のアーティストの音楽も自然と聴くように..
-              %br
-              彼らのルーツとなった国を知りたいと思い、気づいたら氷河を目指して運転していました。
-          .detail-box__profile__sub
-            .detail-box__profile__sub__sns
+              = form_for(current_user) do |f|
+                = f.text_area :profile, placeholder: "プロフィールを記入してください", class:"profile-box-text__input", rows: "7", cols: "30"
+                .profile-form
+                  = f.submit "更新", id: "profile-form__submit"
+          - else 
+            .profile-box-text2
+              = simple_format(@posts.user.profile)
+        .detail-box__profile__sub
+          .detail-box__profile__sub__sns
