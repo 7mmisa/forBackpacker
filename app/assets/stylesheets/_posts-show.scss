@@ -166,6 +166,8 @@
           .profile-box{
             display: flex;
             position: relative;
+            border-top: 1px solid lightgrey;
+            padding-top: 30px;
             &__image{
               border-radius: 50%;
             };
@@ -173,7 +175,7 @@
               position: absolute;
               left: 180px;
               font-size: 23px;
-              top: 38px;
+              top: 60px;
               color: #333;
               text-decoration: none;
             };
@@ -187,6 +189,43 @@
             border-top: 1px solid #D8D8D8;
             padding-top: 35px;
             margin-top: 5px;
+            position: relative;
+            &__input{
+              border: 1px solid lightgrey;
+              border-right: none;
+              border-left: none;
+              border-top: none;
+              border-bottom: none;
+              height: 135px;
+              width: 100%;
+              outline: 0;
+              box-shadow: none;
+            };
+            .profile-form{
+              #profile-form__submit{
+                width: 60px;
+                height: 33px;
+                display: block;
+                position: absolute;
+                font-size: 1em;
+                right: 0;
+                background-color: lightgray;
+                color: #fff;
+                border-style: none;
+                border-radius: 3%;
+              };
+            };
+          };
+          .profile-box-text2{
+            width: 77.6%;
+            float: right;
+            font-size: 14px;
+            line-height: 1.8;
+            letter-spacing: 0;
+            border-top: 1px solid #D8D8D8;
+            padding-top: 35px;
+            margin-top: 5px;
+            position: relative;
           };
         };
         .detail-box__profile__sub{
