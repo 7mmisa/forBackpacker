@@ -29,6 +29,11 @@
       &__text{
         width: 67.1%;
         margin: 50px auto 75px;
+        &__contents{
+          p{
+            font-family: 'Source Sans Pro', sans-serif;
+          };
+        };
         .detail-box-top{
           &__title{
             font-size: 28px;
@@ -65,12 +70,13 @@
                 display: flex;
                 align-items: center;
                 position: relative;
-                background-color: #99CCCC;
                 border-radius: 0.4rem;
                 span{
                   position: absolute;
-                  right: 4px;
+                  right: 0px;
                   color: white;
+                  font-size: 25px;
+                  color: #0066cc;
                 };
               };
               &__delete{
@@ -79,12 +85,12 @@
                 display: flex;
                 align-items: center;
                 position: relative;
-                background-color: #996666;
                 border-radius: 0.4rem;
                 span{
                   position: absolute;
-                  right: 4px;
-                  color: white;
+                  right: 20px;
+                  color: #A52A2A;
+                  font-size: 25px;
                 };
               };
             };
@@ -174,10 +180,11 @@
             &__name{
               position: absolute;
               left: 180px;
-              font-size: 23px;
+              font-size: 28px;
               top: 60px;
               color: #333;
               text-decoration: none;
+              font-family: 'Source Sans Pro', sans-serif;
             };
           };
           .profile-box-text{
@@ -200,6 +207,7 @@
               width: 100%;
               outline: 0;
               box-shadow: none;
+              font-family: 'Source Sans Pro', sans-serif;
             };
             .profile-form{
               #profile-form__submit{

@@ -8,12 +8,13 @@
   align-items: center;
   position: fixed;
   z-index: 2;
-  font-family: 'Montserrat',"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: 'Kaushan Script', cursive;
   &__image--pic{
-    height: 400px;
+    height: 480px;
     width: 100%;
     object-fit: inherit;
     margin: 0 auto;
+    border-radius: 0.25rem;
   };
 
   &__left{
@@ -33,7 +34,7 @@
 
   &__center2{
     height: 42px;
-    width: 280px;
+    width: 225px;
     font-size: 23px;
     text-align: center;
     line-height: 40px;
