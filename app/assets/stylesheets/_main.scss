@@ -9,14 +9,14 @@
     margin: 0 auto;
     background-color: #556B2F;
     .top{
-      height: 600px;
       background-color: #556B2F;
       padding: 0px 40px;
       .slick{
-        height: 400px;
+        height: 480px;
         width: 80%;
         background-color: #fff;
         margin: 0 auto 30px;
+        border-radius: 0.25rem;
       };
 
       &__title{
@@ -26,14 +26,20 @@
         margin-left: 135px;
         font-size: 25px;
         line-height: 3rem;
+        font-family: 'Lato', sans-serif;
+        &__sub{
+          margin-left: 135px;
+          font-size: 18px;
+          font-family: 'Lato', sans-serif;
+        };
       };
     };
 
     .pickupfeeds{
-      height: 650px;
-      width: 86%;
+      height: 536px;
+      width: 80%;
       background-color: #556B2F;
-      padding: 40px;
+      padding: 44px 0 95px 0;
       margin: 0 auto;
       &__title{
         height: 40px;
@@ -41,32 +47,43 @@
         justify-content: space-between;
         align-items: center;
         border-top: 2px solid black;
-        padding-top: 40px;
+        padding-top: 48px;
+        position: relative;
         &__left{
           width: 80px;
           text-align: center;
-          font-size: 24px;
+          font-size: 33px;
+          font-family: 'Source Sans Pro', sans-serif;
+          position: absolute;
+          left: 26px;
         };
         &__right{
           width: 150px;
           text-align: center;
-          font-size: 21px;
+          font-size: 31px;
+          font-family: 'Source Sans Pro', sans-serif;
+          position: absolute;
+          right: 29px;
         };
       };
       &__box{
-        margin-top: 40px;
-        height: 500px;
+        height: 410px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-      
+        &__top{
+          text-decoration: none;
+          color: #333333;
+        };
         &__picture{
-          height: 340px;
-          width: 350px;
+          height: 320px;
+          width: 340px;
 
           &__pic{
-            height: 272px;
+            height: 100%;
+            width: 100%;
             background-color: #F7F6F2;
+            border-radius: 0.25rem;
           };
           &__title{
             height: 18px;
@@ -74,9 +91,10 @@
             font-size: 13px;
           };
           &__sub{
-            height: 50px;
+            height: 37px;
             background-color: #FFF;
             font-size: 18px;
+            border-radius: 0 0 0.25rem 0.25rem;
           };
         };
       };
@@ -115,7 +133,7 @@
     };
     .newfeeds{
       background-color: #F7F6F2;
-      padding: 85px 175px;
+      padding: 70px 175px;
       height: 100%;
       margin: 0 auto;
       &__box{
@@ -124,12 +142,13 @@
           .wrap-title{
             height: 50px;
             border-top: 2px solid black;
-            margin: 50px 0 25px;
-            font-size: 33px;
+            margin: 50px 0 18px;
+            font-size: 35px;
             padding-top: 20px;
+            font-family: 'Source Sans Pro', sans-serif;
           };
           .top-list{
-            height: 330px;
+            height: 282px;
             width: 725px;
             background-color: #FFF;
             padding: 25px;
@@ -137,21 +156,27 @@
             display: flex;
             text-decoration: none;
             color: #333;
+            border-radius: 0.25rem;
             &__pic{
               height: 280px;
               width: 250px;
               background-color: #EEEEEE;
+              img{
+                border-radius: 0.25rem 0 0.25rem 0.25rem;
+              };
             };
             &__text{
               height: 235px;
               width: 475px;
               background-color: #EEEEEE;
               padding: 15px;
+              border-radius: 0 0.25rem 0.25rem 0;
               &__title{
                 height: 85px; 
                 padding-bottom: 25px;
                 font-size: 25px;
                 background-color: #FFF;
+                border-radius: 0.25rem 0.25rem 0 0;
               };
               &__comment{
                 height: 65px;
@@ -163,6 +188,7 @@
                 background-color: #FFF;
                 display: flex;
                 position: relative;
+                border-radius: 0 0 0.25rem 0.25rem;
                 &__username{
                   background-color: #FFF;
                   position: absolute;
@@ -185,6 +211,7 @@
           margin: 50px 0px 25px 25px;
           background-color: #EEEEEE;
           padding: 25px;
+          border-radius: 0.25rem;
           &__country{
             height: 100%;
             width: 100%;
