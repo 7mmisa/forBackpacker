@@ -15,10 +15,10 @@
               .detail-box-top__author__createbox
                 = link_to edit_post_path(@posts.id), method: :get, class: "detail-box-top__author__createbox__update" do
                   %span
-                    編集
+                    = fa_icon 'cog', class: ""
                 = link_to "/posts/#{@posts.id}", method: :delete, class: "detail-box-top__author__createbox__delete" do
                   %span
-                    削除
+                    = fa_icon 'trash', class: ""
           %hr.detail-box-top__line
         .detail-box__text__contents
           = simple_format(@posts.text)
