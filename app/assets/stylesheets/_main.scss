@@ -189,6 +189,7 @@
                 display: flex;
                 position: relative;
                 border-radius: 0 0 0.25rem 0.25rem;
+                font-family: 'Source Sans Pro', sans-serif;
                 &__username{
                   background-color: #FFF;
                   position: absolute;
@@ -204,6 +205,15 @@
               };
             };
           };
+          .pagination{
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            letter-spacing: 0.1rem;
+            a{
+              text-decoration: none;
+              color: #333;
+            };
+          };
         };
         &__right{
           height: 645px;
@@ -216,6 +226,7 @@
             height: 100%;
             width: 100%;
             display: block;
+            font-family: 'Source Sans Pro', sans-serif;
           };
         };
       };

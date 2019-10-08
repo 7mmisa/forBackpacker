@@ -18,3 +18,4 @@
             = post.country.continent.name
           .top-list__text__author__date
             = post.created_at.strftime("%Y.%m.%d")
+  = paginate(@posts)
