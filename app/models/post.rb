@@ -6,4 +6,5 @@ class Post < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :continent
   belongs_to :country
+  validates :title, :text, :country_id, :images, presence: {message: "空欄を埋めてください"}
 end
